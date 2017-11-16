@@ -8,7 +8,6 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <link rel="stylesheet" href="css/leaflet.css">
         <link rel="stylesheet" href="css/qgis2web.css">
-        <link rel="stylesheet" href="css/leaflet-search.css">
         <link rel="stylesheet" href="css/Control.OSMGeocoder.css">
         <link rel="stylesheet" href="css/leaflet-measure.css">
         <style>
@@ -19,7 +18,7 @@
             margin: 0;
         }
         </style>
-        <title>Naturalness of Protected Areas</title>
+        <title>Naturalness of Protected Areas in South Africa</title>
     </head>
     <body>
         <div id="map">
@@ -35,13 +34,12 @@
         <script src="js/labels.js"></script>
         <script src="js/Control.OSMGeocoder.js"></script>
         <script src="js/leaflet-measure.js"></script>
-        <script src="js/leaflet-search.js"></script>
         <script src="data/ProtectedAreasbyNaturalness_0.js"></script>
         <script src="data/ProtectedAreasByType_1.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[-35.2562834978,13.6461080932],[-20.8380955745,37.0667126873]]);
+        }).fitBounds([[-35.2562834978,11.6811022289],[-20.8380955745,39.0317185516]]);
         var hash = new L.Hash(map);
         map.attributionControl.addAttribution('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a>');
         var measureControl = new L.Control.Measure({
@@ -396,11 +394,6 @@
         var baseMaps = {};
         L.control.layers(baseMaps,{'Protected Areas By Type<br /><table><tr><td style="text-align: center;"><img src="legend/ProtectedAreasByType_1_ForestNatureReserve0.png" /></td><td>Forest Nature Reserve</td></tr><tr><td style="text-align: center;"><img src="legend/ProtectedAreasByType_1_ForestWildernessArea1.png" /></td><td>Forest Wilderness Area</td></tr><tr><td style="text-align: center;"><img src="legend/ProtectedAreasByType_1_MountainCatchmentArea2.png" /></td><td>Mountain Catchment Area</td></tr><tr><td style="text-align: center;"><img src="legend/ProtectedAreasByType_1_NationalPark3.png" /></td><td>National Park</td></tr><tr><td style="text-align: center;"><img src="legend/ProtectedAreasByType_1_NatureReserve4.png" /></td><td>Nature Reserve</td></tr><tr><td style="text-align: center;"><img src="legend/ProtectedAreasByType_1_ProtectedEnvironment5.png" /></td><td>Protected Environment</td></tr><tr><td style="text-align: center;"><img src="legend/ProtectedAreasByType_1_SpecialNatureReserve6.png" /></td><td>Special Nature Reserve</td></tr><tr><td style="text-align: center;"><img src="legend/ProtectedAreasByType_1_WorldHeritageSite7.png" /></td><td>World Heritage Site</td></tr></table>': layer_ProtectedAreasByType_1,'Protected Areas by Naturalness<br /><table><tr><td style="text-align: center;"><img src="legend/ProtectedAreasbyNaturalness_0_0100.png" /></td><td> 0 - 10 </td></tr><tr><td style="text-align: center;"><img src="legend/ProtectedAreasbyNaturalness_0_10201.png" /></td><td> 10 - 20 </td></tr><tr><td style="text-align: center;"><img src="legend/ProtectedAreasbyNaturalness_0_20302.png" /></td><td> 20 - 30 </td></tr><tr><td style="text-align: center;"><img src="legend/ProtectedAreasbyNaturalness_0_30403.png" /></td><td> 30 - 40 </td></tr><tr><td style="text-align: center;"><img src="legend/ProtectedAreasbyNaturalness_0_40504.png" /></td><td> 40 - 50 </td></tr><tr><td style="text-align: center;"><img src="legend/ProtectedAreasbyNaturalness_0_50605.png" /></td><td> 50 - 60 </td></tr><tr><td style="text-align: center;"><img src="legend/ProtectedAreasbyNaturalness_0_60706.png" /></td><td> 60 - 70 </td></tr><tr><td style="text-align: center;"><img src="legend/ProtectedAreasbyNaturalness_0_70807.png" /></td><td> 70 - 80 </td></tr><tr><td style="text-align: center;"><img src="legend/ProtectedAreasbyNaturalness_0_80908.png" /></td><td> 80 - 90 </td></tr><tr><td style="text-align: center;"><img src="legend/ProtectedAreasbyNaturalness_0_901009.png" /></td><td> 90 - 100 </td></tr></table>': layer_ProtectedAreasbyNaturalness_0,},{collapsed:false}).addTo(map);
         setBounds();
-        map.addControl(new L.Control.Search({
-            layer: layer_ProtectedAreasByType1,
-            initial: false,
-            hideMarkerOnCollapse: true,
-            propertyName: 'CUR_NME'}));
         </script>
     </body>
 </html>
